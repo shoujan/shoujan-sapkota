@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Udaya Foundation Nepal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#059669;
+  --green-dark:#065f46;
+  --dark:#0f172a;
+  --bg:#f6fbf8;
+  --muted:#475569;
+  --card:#ffffff;
+  --shadow:0 10px 30px rgba(0,0,0,0.06);
+  --radius:18px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;object-fit:cover;display:block}
+
+.wrap{width:90%;max-width:1150px;margin:auto}
+
+/* ===== TOP BAR ===== */
+.topbar{
+  background:var(--green-dark);
+  color:white;
+  font-size:14px;
+  padding:8px 0;
+}
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===== NAV ===== */
+header{
+  background:rgba(255,255,255,0.9);
+  position:sticky;
+  top:0;
+  z-index:99;
+  backdrop-filter: blur(10px);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  gap:12px;
+}
+
+.logo{
+  font-weight:900;
+  font-size:18px;
+  color:var(--green);
+  letter-spacing:-0.02em;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+  font-weight:700;
+  color:rgba(15,23,42,.78);
+}
+
+.menu a{
+  padding:8px 10px;
+  border-radius:12px;
+}
+.menu a:hover{
+  background:rgba(5,150,105,0.10);
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:999px;
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  white-space:nowrap;
+}
+.btn.primary{
+  background:var(--green);
+  color:white;
+  box-shadow:0 14px 26px rgba(5,150,105,0.25);
+}
+.btn.primary:hover{filter:brightness(0.98)}
+.btn.secondary{
+  border:2px solid var(--green);
+  color:var(--green);
+  background:#fff;
+}
+.btn.secondary:hover{
+  background:rgba(5,150,105,0.07);
+}
+
+.nav-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Mobile menu button */
+.hamburger{
+  display:none;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.85);
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  padding: 0 0 14px;
+}
+.mobile-menu .box{
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:16px;
+  padding:10px;
+  box-shadow: var(--shadow);
+}
+.mobile-menu a{
+  display:block;
+  padding:12px 12px;
+  border-radius:12px;
+  font-weight:800;
+  color:rgba(15,23,42,.78);
+}
+.mobile-menu a:hover{background:rgba(5,150,105,0.10)}
+
+/* ===== HERO ===== */
+.hero{
+  padding:60px 0;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:40px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(32px, 4.2vw, 48px);
+  margin-bottom:15px;
+  line-height:1.1;
+  letter-spacing:-0.04em;
+}
+.hero p{
+  margin-bottom:20px;
+  color:var(--muted);
+  max-width:60ch;
+}
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.hero-img{
+  border-radius:22px;
+  overflow:hidden;
+  height:420px;
+  box-shadow: var(--shadow);
+  border:1px solid rgba(15,23,42,.08);
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:70px 0;
+}
+.section h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:clamp(24px, 3vw, 32px);
+  letter-spacing:-0.03em;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  border:1px solid rgba(15,23,42,.08);
+}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:14px}
+
+/* ===== BAND SECTION ===== */
+.band{
+  background:linear-gradient(135deg,#064e3b,#059669);
+  color:white;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(5,150,105,.22);
+}
+.band-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  padding:40px;
+  align-items:center;
+}
+.band-img{
+  height:350px;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+}
+.band h3{font-size:28px;margin-bottom:10px;letter-spacing:-0.02em}
+.band p{opacity:0.9;margin-bottom:20px}
+
+/* ===== WAYS ===== */
+.ways{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.way{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:white;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(15,23,42,.08);
+}
+.way-img{height:200px}
+.way-body{padding:20px}
+.way-body p{color:var(--muted);font-size:14px}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:#64748b;
+  border-top:1px solid rgba(15,23,42,.08);
+  background:rgba(255,255,255,0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:980px){
+  .hero-grid,
+  .band-inner,
+  .cards,
+  .ways{
+    grid-template-columns:1fr;
+  }
+  .menu{display:none;}
+  .hamburger{display:inline-flex;align-items:center;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div>Email: admin@udayafoundationnepal.org</div>
+    <div>Phone: +977-9749249523 | Kathmandu, Nepal</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="logo">Udaya Foundation</div>
+
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#involved">Get Involved</a>
+        <a href="#donate">Donate</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a href="#donate" class="btn primary">Donate</a>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="box">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#involved">Get Involved</a>
+        <a href="#donate">Donate</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Empowering Communities, Transforming Lives</h1>
+      <p>Creating sustainable impact through education, healthcare, and community development programs across Nepal.</p>
+      <div class="hero-buttons">
+        <a href="#involved" class="btn primary">Make an Impact</a>
+        <a href="#programs" class="btn secondary">Explore Programs</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <!-- FIXED UNSPLASH URL (more reliable) -->
+      <img
+        src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1400&q=80"
+        alt="Community Nepal"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section" id="programs">
+  <div class="wrap">
+    <h2>Our Impact Areas</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Education Programs</h3>
+        <p>Supporting children with school materials, scholarships, and learning access.</p>
+      </div>
+      <div class="card">
+        <h3>Healthcare Access</h3>
+        <p>Medical camps and preventive healthcare services for underserved communities.</p>
+      </div>
+      <div class="card">
+        <h3>Community Development</h3>
+        <p>Skill development and sustainable livelihood programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="section">
+  <div class="wrap">
+    <div class="band">
+      <div class="band-inner">
+        <div class="band-img">
+          <!-- ✅ FIXED GITHUB RAW URL FORMAT -->
+          <img
+            src="https://raw.githubusercontent.com/shoujan/shoujan-sapkota/main/1111.jpg"
+            alt="Nepal Helping"
+            loading="lazy"
+          >
+        </div>
+        <div>
+          <h3>Your Support Creates Lasting Change</h3>
+          <p>Every donation directly supports families, empowers communities, and builds a stronger future for Nepal.</p>
+          <a href="#donate" class="btn primary" style="background:#fff;color:#064e3b;">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYS -->
+<section class="section" id="involved">
+  <div class="wrap">
+    <h2>Ways to Make a Difference</h2>
+    <div class="ways">
+      <div class="way">
+        <div class="way-img">
+          <img
+            src="https://images.unsplash.com/photo-1494173853739-c21f58b16055?auto=format&fit=crop&w=1200&q=80"
+            alt="Donation"
+            loading="lazy"
+          >
+        </div>
+        <div class="way-body">
+          <h3>Make a Donation</h3>
+          <p>Your support funds education and healthcare initiatives.</p>
+        </div>
+      </div>
+
+      <div class="way">
+        <div class="way-img">
+          <img
+            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80"
+            alt="Volunteer"
+            loading="lazy"
+          >
+        </div>
+        <div class="way-body">
+          <h3>Volunteer</h3>
+          <p>Join our mission and serve communities directly.</p>
+        </div>
+      </div>
+
+      <div class="way">
+        <div class="way-img">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+            alt="Partner"
+            loading="lazy"
+          >
+        </div>
+        <div class="way-body">
+          <h3>Partner With Us</h3>
+          <p>Collaborate to create sustainable social impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="section" id="donate">
+  <div class="wrap">
+    <div class="card" style="text-align:center">
+      <h3 style="margin-bottom:8px;font-size:22px;letter-spacing:-0.02em">Ready to help today?</h3>
+      <p style="margin-bottom:16px;color:var(--muted);font-weight:600">
+        Donate, volunteer, or partner — your support creates measurable change.
+      </p>
+      <a class="btn primary" href="#donate">Donate Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Udaya Foundation Nepal | All Rights Reserved
+</footer>
+
+<script>
+  // year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // mobile menu
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  function closeMenu(){
+    mobileMenu.style.display = "none";
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  hamburger.addEventListener("click", () => {
+    const open = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!open));
+    mobileMenu.style.display = open ? "none" : "block";
+  });
+
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) closeMenu();
+  });
+</script>
+
+</body>
+</html>
